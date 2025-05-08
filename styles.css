@@ -1,0 +1,149 @@
+body {
+    font-family: ' Roboto ', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #e6f3fa; /* Fondo celeste claro, evocando agua */
+    color: #333;
+}
+
+header {
+    background-color: #1e90ff; /* Azul vibrante */
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 2px solid #b3e0ff; /* Borde celeste suave */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #1e90ff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+section h3 {
+    color: #005f99;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: circle;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #005f99;
+}
+
+.campaign-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.campaign-button:hover {
+    background-color: #005f99;
+    transform: scale(1.05);
+}
+
+.calculator {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+}
+
+.calculator label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+    font-weight: bold;
+    color: #005f99;
+}
+
+.calculator input {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem;
+    border: 1px solid #b3e0ff;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.calculator button {
+    margin: 1rem 0;
+    padding: 0.8rem 1.5rem;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calculator button:hover {
+    background-color: #005f99;
+}
+
+#result {
+    font-weight: bold;
+    color: #005f99;
+    margin-top: 1rem;
+}
+
+footer {
+    background-color: #1e90ff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
