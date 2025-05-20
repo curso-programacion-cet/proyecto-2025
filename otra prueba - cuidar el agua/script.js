@@ -97,74 +97,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // --------- Funcionalidad para la galería de imágenes ---------
-    function setupImageGallery() {
-        const galleryItems = document.querySelectorAll('.photo-item img');
+    // --------- Funcionalidad para el carrusel de Bootstrap ---------
+    function setupCarousel() {
+        // Inicialización del carrusel
+        const carousel = document.getElementById('carouselAgua');
         
-        galleryItems.forEach(img => {
-            img.addEventListener('click', function() {
-                // Crear un modal para mostrar la imagen ampliada
-                const modal = document.createElement('div');
-                modal.className = 'image-modal';
-                
-                const modalContent = document.createElement('div');
-                modalContent.className = 'modal-content';
-                
-                const largeImage = document.createElement('img');
-                largeImage.src = this.src;
-                
-                const closeButton = document.createElement('span');
-                closeButton.className = 'close-modal';
-                closeButton.innerHTML = '&times;';
-                
-                modalContent.appendChild(closeButton);
-                modalContent.appendChild(largeImage);
-                modal.appendChild(modalContent);
-                document.body.appendChild(modal);
-                
-                // Estilizar el modal
-                modal.style.position = 'fixed';
-                modal.style.top = '0';
-                modal.style.left = '0';
-                modal.style.width = '100%';
-                modal.style.height = '100%';
-                modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-                modal.style.zIndex = '1000';
-                modal.style.display = 'flex';
-                modal.style.justifyContent = 'center';
-                modal.style.alignItems = 'center';
-                
-                modalContent.style.position = 'relative';
-                modalContent.style.maxWidth = '90%';
-                modalContent.style.maxHeight = '90%';
-                
-                largeImage.style.maxWidth = '100%';
-                largeImage.style.maxHeight = '90vh';
-                largeImage.style.border = '5px solid white';
-                
-                closeButton.style.position = 'absolute';
-                closeButton.style.top = '-40px';
-                closeButton.style.right = '-40px';
-                closeButton.style.color = 'white';
-                closeButton.style.fontSize = '40px';
-                closeButton.style.fontWeight = 'bold';
-                closeButton.style.cursor = 'pointer';
-                
-                // Cerrar el modal al hacer clic en el botón o fuera de la imagen
-                closeButton.addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-                
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        document.body.removeChild(modal);
+        if (carousel) {
+            // El carrusel ya viene inicializado con Bootstrap
+            // Solo agregamos funcionalidad adicional si es necesario
+            
+            // Por ejemplo, cambiar automáticamente las imágenes cada 5 segundos
+            const carouselInstance = new bootstrap.Carousel(carousel, {
+                interval: 5000,
+                wrap: true
+            });
+            
+            // Agregar efecto de pausa al pasar el ratón
+            carousel.addEventListener('mouseenter', function() {
+                carouselInstance.pause();
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                carouselInstance.cycle();
+            });
+            
+            // Hacer que las imágenes sean más grandes en pantallas pequeñas al hacer clic
+            const carouselItems = carousel.querySelectorAll('.carousel-item img');
+            
+            carouselItems.forEach(img => {
+                img.addEventListener('click', function() {
+                    // En dispositivos móviles, hacer que las imágenes tengan un comportamiento especial
+                    if (window.innerWidth <= 768) {
+                        if (this.style.height === '100vh') {
+                            this.style.height = '300px';
+                        } else {
+                            this.style.height = '100vh';
+                            this.style.objectFit = 'contain';
+                            this.style.backgroundColor = 'rgba(0,0,0,0.8)';
+                        }
                     }
                 });
             });
-            
-            // Cambiar el cursor al pasar sobre las imágenes para indicar que son interactivas
-            img.style.cursor = 'pointer';
-        });
+        }
     }
     
     // --------- Consejos aleatorios sobre el cuidado del agua ---------
@@ -264,14 +238,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar todas las funcionalidades
     setupContactForm();
-    setupImageGallery();
+    setupCarousel();
     waterdropCounter.init();
     waterTips.init();
 });
 
 // Efecto de animación para elementos al hacer scroll
 window.addEventListener('scroll', function() {
-    const elements = document.querySelectorAll('.photo-item, .tip-card');
+    const elements = document.querySelectorAll('.tip-card');
     
     elements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
@@ -286,7 +260,7 @@ window.addEventListener('scroll', function() {
 
 // Configuración inicial para efectos de animación
 window.addEventListener('load', function() {
-    const elements = document.querySelectorAll('.photo-item, .tip-card');
+    const elements = document.querySelectorAll('.tip-card');
     
     elements.forEach(element => {
         // Estilo inicial para los elementos que se animarán

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuidado del Agua - Nuestro Recurso Vital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -71,54 +73,67 @@
         <h2>Galería de Fotos</h2>
         <p>Imágenes que nos recuerdan la belleza del agua y la importancia de su conservación.</p>
         
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="imagenes/rio.jpg" alt="Río cristalino">
-                <div class="photo-caption">
-                    <h3>Ríos Saludables</h3>
-                    <p>Los ríos limpios son esenciales para ecosistemas equilibrados</p>
+        <div id="carouselAgua" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselAgua" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselAgua" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselAgua" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselAgua" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselAgua" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselAgua" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagenes/rio.jpg" class="d-block w-100" alt="Río cristalino">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Ríos Saludables</h3>
+                        <p>Los ríos limpios son esenciales para ecosistemas equilibrados</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/conservacion.jpg" class="d-block w-100" alt="Conservación del agua">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Conservación</h3>
+                        <p>Pequeñas acciones para ahorrar agua cada día</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/escasez.jpg" class="d-block w-100" alt="Escasez de agua">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Escasez</h3>
+                        <p>Millones de personas sufren por falta de acceso al agua potable</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/tecnologia.jpg" class="d-block w-100" alt="Tecnologías de agua">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Innovación</h3>
+                        <p>Nuevas tecnologías para purificación y conservación</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/oceano.jpg" class="d-block w-100" alt="Océano azul">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Océanos</h3>
+                        <p>Proteger nuestros océanos es vital para el planeta</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/educacion.jpg" class="d-block w-100" alt="Educación sobre el agua">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Educación</h3>
+                        <p>Enseñando a las nuevas generaciones sobre el valor del agua</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="photo-item">
-                <img src="imagenes/conservacion.jpg" alt="Conservación del agua">
-                <div class="photo-caption">
-                    <h3>Conservación</h3>
-                    <p>Pequeñas acciones para ahorrar agua cada día</p>
-                </div>
-            </div>
-            
-            <div class="photo-item">
-                <img src="imagenes/escasez.jpg" alt="Escasez de agua">
-                <div class="photo-caption">
-                    <h3>Escasez</h3>
-                    <p>Millones de personas sufren por falta de acceso al agua potable</p>
-                </div>
-            </div>
-            
-            <div class="photo-item">
-                <img src="imagenes/tecnologia.jpg" alt="Tecnologías de agua">
-                <div class="photo-caption">
-                    <h3>Innovación</h3>
-                    <p>Nuevas tecnologías para purificación y conservación</p>
-                </div>
-            </div>
-            
-            <div class="photo-item">
-                <img src="imagenes/oceano.jpg" alt="Océano azul">
-                <div class="photo-caption">
-                    <h3>Océanos</h3>
-                    <p>Proteger nuestros océanos es vital para el planeta</p>
-                </div>
-            </div>
-            
-            <div class="photo-item">
-                <img src="imagenes/educacion.jpg" alt="Educación sobre el agua">
-                <div class="photo-caption">
-                    <h3>Educación</h3>
-                    <p>Enseñando a las nuevas generaciones sobre el valor del agua</p>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAgua" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAgua" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
         </div>
     </section>
     

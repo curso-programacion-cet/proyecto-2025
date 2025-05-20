@@ -148,36 +148,65 @@ p {
 /* Sección de galería */
 .gallery {
     background-color: #f9f9f9;
+    padding-bottom: 4rem;
 }
 
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 1.5rem;
-}
-
-.photo-item {
-    border-radius: 8px;
+/* Estilos para el carousel de Bootstrap */
+.carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.photo-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.photo-item img {
-    width: 100%;
-    height: 200px;
+.carousel-item img {
+    height: 450px;
     object-fit: cover;
-    display: block;
 }
 
-.photo-caption {
-    padding: 1rem;
-    background-color: white;
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 15px;
+    bottom: 30px;
+}
+
+.carousel-caption h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.carousel-indicators {
+    bottom: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+/* Personalización de los botones de carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 119, 190, 0.7);
+    border-radius: 50%;
+    padding: 25px;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+    
+    .carousel-caption {
+        position: relative;
+        background-color: #0077be;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block !important;
+    }
 }
 
 /* Sección de contacto */
